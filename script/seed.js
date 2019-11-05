@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Game, Order, OrderItem} = require('../server/db/models')
 
 const users = [
   {
@@ -24,6 +24,52 @@ const users = [
   }
 ]
 
+const games = [
+  {
+    name: 'TestGame1',
+    quantity: 1,
+    price: 12.99,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/pc5aIxQ9UFK5-ShY2CrZUDk_qAA=/fit-in/246x300/pic1603292.jpg'
+  },
+  {
+    name: 'TestGame2',
+    quantity: 6,
+    price: 12.79,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/'
+  }
+]
+
+const orders = [
+  {
+    status: 'INCOMPLETE',
+    orderDate: null
+  },
+  {
+    status: 'COMPLETE',
+    orderDate: null
+  }
+]
+
+const orderitems = [
+  {
+    OrderId: 1,
+    GameId: 1,
+    quantity: 7
+  },
+  {
+    // Captilized because these are columns that created from the model associations
+    OrderId: 1,
+    GameId: 2,
+    quantity: 6
+  }
+]
+
 async function seed() {
   await db.sync({force: true})
   console.log('db synced!')
@@ -36,6 +82,24 @@ async function seed() {
   await Promise.all(
     users.map(user => {
       return User.create(user)
+    })
+  )
+
+  await Promise.all(
+    games.map(game => {
+      return Game.create(game)
+    })
+  )
+
+  await Promise.all(
+    orders.map(order => {
+      return Order.create(order)
+    })
+  )
+
+  await Promise.all(
+    orderitems.map(orderitem => {
+      return OrderItem.create(orderitem)
     })
   )
 
