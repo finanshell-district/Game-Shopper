@@ -9,6 +9,7 @@ class Game extends React.Component {
   }
   render() {
     const {game} = this.props
+    console.log('GAME', game)
     if (!game) {
       return (
         <div>
@@ -18,23 +19,24 @@ class Game extends React.Component {
     }
     return (
       <div className="container">
-        <h1>{game.name}</h1>
+        <Link to={`/games/${game.id}`}>
+          <h3>{game.name}</h3>
+        </Link>
         <img src={game.imageUrl} />
+        <p>{`Price:$${game.price}`}</p>
+        <p>Description: {game.description}</p>
       </div>
     )
   }
 }
-
-const mapState = state => {
+const mapStateToProps = state => {
   return {
-    student: state.reducerStudents.student
+    game: state.game.game
   }
 }
-
-const mapDispatch = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
     getGameThunk: id => dispatch(getGameThunk(id))
   }
 }
-
-export default connect(mapState, mapDispatch)(Game)
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
