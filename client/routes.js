@@ -15,7 +15,6 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn} = this.props
-
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
@@ -30,6 +29,7 @@ class Routes extends Component {
         )}
         {/* Displays our Login component as a fallback */}
         {/* <Route component={Login} /> */}
+        <Route path="/home" component={UserHome} />
         {/* <Route path="/games" component={Games} /> */}
       </Switch>
     )
