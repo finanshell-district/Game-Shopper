@@ -11,15 +11,16 @@ class Games extends React.Component {
   render() {
     const {games} = this.props
     return (
-      <div>
+      <div className="container">
         <h1>All Games</h1>
         {games.map(game => (
           <div key={game.id}>
-            <h3>{game.name}</h3>
+            <Link to={`/games/${game.id}`}>
+              <h3>{game.name}</h3>
+            </Link>
             <img src={game.imageUrl} />
             <p>{`Price:$${game.price}`}</p>
             <p>Description: {game.description}</p>
-            <button type="button">VIEW GAME</button>
           </div>
         ))}
       </div>
