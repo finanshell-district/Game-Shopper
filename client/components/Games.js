@@ -4,17 +4,24 @@ import {Link} from 'react-router-dom'
 import {getGamesThunk} from '../store/game'
 
 class Games extends React.Component {
-  // componentDidMount() {
-  //   this.props.getGamesThunk()
-  // }
+  componentDidMount() {
+    this.props.getGamesThunk()
+  }
 
   render() {
+    const {games} = this.props
     return (
       <div>
         <h1>All Games</h1>
-        <div>
-          <h1>map through games here</h1>
-        </div>
+        {games.map(game => (
+          <div key={game.id}>
+            <h3>{game.name}</h3>
+            <img src={game.imageUrl} />
+            <p>{`Price:$${game.price}`}</p>
+            <p>Description: {game.description}</p>
+            <button type="button">VIEW GAME</button>
+          </div>
+        ))}
       </div>
     )
   }
@@ -23,16 +30,16 @@ class Games extends React.Component {
 /**
  * CONTAINER
  */
-const mapState = games => {
+const mapStateToProps = state => {
   return {
-    games
+    games: state.game.games
   }
 }
 
-const mapDispatch = dispatch => {
+const mapDispatchToProps = dispatch => {
   return {
-    getGamesThunk: dispatch(getGamesThunk())
+    getGamesThunk: () => dispatch(getGamesThunk())
   }
 }
 
-export default connect(mapState, mapDispatch)(Games)
+export default connect(mapStateToProps, mapDispatchToProps)(Games)
