@@ -26,24 +26,37 @@ const users = [
 
 const games = [
   {
-    name: 'TestGame1',
+    name: 'X Wing',
     quantity: 1,
     price: 12.99,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'quip ex ea commodo eu fugiat nulla pariatur. Excepteur sint a qui officia deserunt mollit anim id est laborum.',
     imageUrl:
       'https://cf.geekdo-images.com/itemrep/img/pc5aIxQ9UFK5-ShY2CrZUDk_qAA=/fit-in/246x300/pic1603292.jpg'
   },
   {
-    name: 'TestGame2',
+    name: 'Alhambra',
     quantity: 6,
     price: 12.79,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
-      'https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/'
+      'https://cf.geekdo-images.com/itemrep/img/RhxrVlZj3mmqA1NgLv5ApD3uNAc=/fit-in/246x300/pic4893652.jpg'
   }
 ]
+
+// This is a quick way to add a lot of games at once.
+for (let i = 0; i < 10; i++) {
+  games.push({
+    name: 'Memoir 44',
+    quantity: 1,
+    price: 49.99,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/oU2Qqb-aX3qCzQWz0RDIwPUea5A=/fit-in/246x300/pic43663.jpg'
+  })
+}
 
 const orders = [
   {

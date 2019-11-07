@@ -2,6 +2,44 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {getGamesThunk} from '../store/game'
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardDeck,
+  Button,
+  CardHeader
+} from 'reactstrap'
+
+const GameCard = game => {
+  console.log(game)
+  return (
+    <div key={game.id}>
+      <Card
+        className="text-center mt-3"
+        inverse
+        style={{width: '18rem', backgroundColor: '#333', borderColor: '#333'}}
+      >
+        <CardHeader>{game.name}</CardHeader>
+        <CardBody>
+          <Link to={`/games/${game.id}`}>
+            <CardImg width="100%" src={game.imageUrl} alt="Card image cap" />
+          </Link>
+          <CardText>${game.price}</CardText>
+          <Link to={`/games/${game.id}`}>
+            <Button className="m-2" color="info">
+              Learn more
+            </Button>
+          </Link>
+          <Button className="m-1" color="warning">
+            Add To Cart
+          </Button>
+        </CardBody>
+      </Card>
+    </div>
+  )
+}
 
 class Games extends React.Component {
   componentDidMount() {
@@ -10,21 +48,7 @@ class Games extends React.Component {
 
   render() {
     const {games} = this.props
-    return (
-      <div className="container">
-        <h1>All Games</h1>
-        {games.map(game => (
-          <div key={game.id}>
-            <Link to={`/games/${game.id}`}>
-              <h3>{game.name}</h3>
-            </Link>
-            <img src={game.imageUrl} />
-            <p>{`Price:$${game.price}`}</p>
-            <p>Description: {game.description}</p>
-          </div>
-        ))}
-      </div>
-    )
+    return <CardDeck>{games.map(game => GameCard(game))}</CardDeck>
   }
 }
 
