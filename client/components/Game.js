@@ -9,7 +9,6 @@ class Game extends React.Component {
   }
   render() {
     const {game} = this.props
-    console.log('GAME', game)
     if (!game) {
       return (
         <div>
