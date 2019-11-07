@@ -17,10 +17,10 @@ const Game = db.define('Game', {
     }
   },
   price: {
-    type: Sequelize.DECIMAL,
+    type: Sequelize.INTEGER,
     defaultValue: 0,
     validate: {
-      isDecimal: true
+      isNumeric: true
     }
   },
   description: {
