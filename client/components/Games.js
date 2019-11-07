@@ -25,7 +25,7 @@ const GameCard = game => {
           <Link to={`/games/${game.id}`}>
             <CardImg width="100%" src={game.imageUrl} alt="Card image cap" />
           </Link>
-          <CardText>${game.price}</CardText>
+          <CardText>${game.price / 100}</CardText>
           <Link to={`/games/${game.id}`}>
             <Button className="m-2" color="info">
               Learn more
