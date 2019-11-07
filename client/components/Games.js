@@ -13,7 +13,6 @@ import {
 } from 'reactstrap'
 
 const GameCard = game => {
-  console.log(game)
   return (
     <div key={game.id}>
       <Card
@@ -48,7 +47,13 @@ class Games extends React.Component {
 
   render() {
     const {games} = this.props
-    return <CardDeck>{games.map(game => GameCard(game))}</CardDeck>
+    return (
+      <div className="container mx-auto">
+        <CardDeck className="m-0 p-0 d-flex justify-content-center">
+          {games.map(game => GameCard(game))}
+        </CardDeck>
+      </div>
+    )
   }
 }
 
