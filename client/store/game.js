@@ -6,6 +6,7 @@ import history from '../history'
  */
 const GET_GAMES = 'GET_GAMES'
 const GET_GAME = 'GET_GAME'
+const ADD_CART = 'ADD_CART'
 /**
  * INITIAL STATE
  */

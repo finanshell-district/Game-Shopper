@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardImg, CardBody, CardDeck, CardHeader} from 'reactstrap'
+import {Card, CardImg, CardBody, CardDeck, CardHeader, Button} from 'reactstrap'
 const CartItem = props => {
   const {game} = props
   console.log('GAME', game)

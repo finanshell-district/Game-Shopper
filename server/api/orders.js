@@ -13,7 +13,7 @@ router.post('/', async (req, res, next) => {
       OrderItem.create({OrderId: order.id, GameId: item.id, quantity: item.qty})
     })
 
-    res.json(user)
+    res.status(201).send('order complete')
   } catch (err) {
     next(err)
   }

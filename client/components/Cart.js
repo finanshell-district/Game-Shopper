@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {CartItem} from './index'
 
 class Cart extends Component {
@@ -15,4 +16,5 @@ class Cart extends Component {
     )
   }
 }
+
 export default Cart
