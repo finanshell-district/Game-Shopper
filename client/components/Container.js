@@ -1,11 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 import {getGamesThunk} from '../store/game'
 import {Button} from 'reactstrap'
-import {Cart, Games} from './index'
+import {Routes, Navbar} from './index'
 
-class ParentGames extends React.Component {
+class Container extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -42,11 +41,14 @@ class ParentGames extends React.Component {
   render() {
     const {games} = this.props
     const {gamesLS} = this.state
-    console.log('ON STATE', gamesLS)
     return (
       <div>
-        <Games games={games} addToLocalStorage={this.addToLocalStorage} />
-        <Cart games={gamesLS} />
+        <Navbar />
+        <Routes
+          gamesLS={gamesLS}
+          games={games}
+          addToLocalStorage={this.addToLocalStorage}
+        />
         <Button>Submit Order</Button>
       </div>
     )
@@ -69,4 +71,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ParentGames)
+export default connect(mapStateToProps, mapDispatchToProps)(Container)

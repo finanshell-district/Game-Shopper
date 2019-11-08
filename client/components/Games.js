@@ -11,7 +11,8 @@ import {
 import {Link} from 'react-router-dom'
 
 const Games = props => {
-  const {games, addToLocalStorage} = props
+  let {games, addToLocalStorage} = props
+  games = games ? games : []
   return (
     <div className="container mx-auto">
       <CardDeck className="m-0 p-0 d-flex justify-content-center">

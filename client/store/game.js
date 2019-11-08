@@ -39,7 +39,6 @@ export const getGamesThunk = () => async dispatch => {
 export const getGameThunk = id => async dispatch => {
   try {
     const res = await axios.get(`/api/games/${id}`)
-    console.log('DATA', res.data)
     dispatch(getGame(res.data))
   } catch (err) {
     console.error(err)
