@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getGamesThunk} from '../store/game'
-import {Button} from 'reactstrap'
 import {Routes, Navbar} from './index'
 
 class Container extends React.Component {
@@ -41,6 +40,10 @@ class Container extends React.Component {
   render() {
     const {games} = this.props
     const {gamesLS} = this.state
+    console.log(
+      'TCL: Container -> render -> this.addToLocalStorage',
+      this.addToLocalStorage
+    )
     return (
       <div>
         <Navbar />
@@ -49,7 +52,6 @@ class Container extends React.Component {
           games={games}
           addToLocalStorage={this.addToLocalStorage}
         />
-        <Button>Submit Order</Button>
       </div>
     )
   }

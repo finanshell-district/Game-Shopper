@@ -12,6 +12,7 @@ import {Link} from 'react-router-dom'
 
 const Games = props => {
   let {games, addToLocalStorage} = props
+  console.log('TCL: props', props)
   games = games ? games : []
   return (
     <div className="container mx-auto">

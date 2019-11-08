@@ -14,15 +14,30 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn, games, gamesLS, addToLocaStorage} = this.props
+    const {isLoggedIn, games, gamesLS, addToLocalStorage} = this.props
+    console.log('TCL: Routes -> render -> this.props', this.props)
+    console.log(
+      'TCL: Routes -> render -> addToLocalStorage ',
+      addToLocalStorage
+    )
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        <Route exact path="/games" render={() => <Games games={games} />} />
+        <Route
+          exact
+          path="/games"
+          render={() => (
+            <Games games={games} addToLocalStorage={addToLocalStorage} />
+          )}
+        />
         <Route exact path="/games/:id" component={Game} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/cart" component={Cart} />
+        <Route
+          exact
+          path="/cart"
+          render={() => <Cart gamesLS={gamesLS} games={games} />}
+        />
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
