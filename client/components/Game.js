@@ -22,7 +22,7 @@ class Game extends React.Component {
           <h3>{game.name}</h3>
         </Link>
         <img src={game.imageUrl} />
-        <p>{`Price:$${game.price}`}</p>
+        <p>{`Price:$${game.price / 100}`}</p>
         <p>Description: {game.description}</p>
       </div>
     )
