@@ -6,6 +6,7 @@ import history from '../history'
  */
 const GET_GAMES = 'GET_GAMES'
 const GET_GAME = 'GET_GAME'
+const ADD_CART = 'ADD_CART'
 /**
  * INITIAL STATE
  */
@@ -38,7 +39,6 @@ export const getGamesThunk = () => async dispatch => {
 export const getGameThunk = id => async dispatch => {
   try {
     const res = await axios.get(`/api/games/${id}`)
-    console.log('DATA', res.data)
     dispatch(getGame(res.data))
   } catch (err) {
     console.error(err)
