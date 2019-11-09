@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {CartItem} from './index'
+import {CartItem, ThankYou} from './index'
 import {submitOrderThunk, updateCartThunk} from '../store/cart'
 import {Button} from 'reactstrap'
 import {Signup} from './auth-form'
@@ -10,9 +10,10 @@ class Cart extends Component {
   constructor() {
     super()
     this.state = {
-      needToSignUp: false
+      step: null
     }
     this.submitOrder = this.submitOrder.bind(this)
+    this.validSubmit = this.validSubmit.bind(this)
   }
 
   submitOrder() {
@@ -26,17 +27,33 @@ class Cart extends Component {
     updateCartThunk(clearedCart)
     localStorage.setItem(KEY, JSON.stringify(clearedCart))
   }
+
+  validSubmit() {
+    const {email} = this.props
+    if (email) {
+      this.submitOrder()
+      this.setState({
+        step: 2
+      })
+    } else {
+      this.setState({
+        step: 1
+      })
+    }
+  }
   render() {
-    const {cart, games, orderStatus, email} = this.props
-    const {needToSignUp} = this.state
-    switch (needToSignUp) {
-      case true:
+    const {cart, games, orderStatus} = this.props
+    const {step} = this.state
+    switch (step) {
+      case 1:
         return (
           <div>
             <h4>Sign Up to complete order</h4>
             <Signup />
           </div>
         )
+      case 2:
+        return <ThankYou />
       default:
         return (
           <div>
@@ -46,7 +63,7 @@ class Cart extends Component {
             {cart.map(game => <CartItem game={game} key={games.id} />)}
             <Button
               onClick={() => {
-                email ? this.submitOrder() : this.setState({needToSignUp: true})
+                this.validSubmit()
               }}
             >
               Submit Order
