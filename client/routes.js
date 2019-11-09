@@ -15,7 +15,6 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn, games, cart, addToCart, KEY} = this.props
-    console.log('TCL: Routes -> render -> isLoggedIn', isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}

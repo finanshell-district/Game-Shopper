@@ -44,6 +44,7 @@ class Container extends React.Component {
           games={games}
           addToCart={this.addToCart}
           KEY={KEY}
+          removefromCart={this.removeFromCart}
         />
       </div>
     )

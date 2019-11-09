@@ -14,6 +14,7 @@ class Cart extends Component {
     }
     this.submitOrder = this.submitOrder.bind(this)
     this.validSubmit = this.validSubmit.bind(this)
+    this.removeFromCart = this.removeFromCart.bind(this)
   }
 
   submitOrder() {
@@ -41,9 +42,39 @@ class Cart extends Component {
       })
     }
   }
+
+  displayGame() {
+    const {cart, games} = this.props
+
+    const gamesToDisplay = []
+    for (let i = 0; i < games.length; i++) {
+      const game = games[i]
+      cart.forEach(item => {
+        if (game.id === item.id) {
+          gamesToDisplay.push(game)
+        }
+      })
+    }
+
+    return gamesToDisplay
+  }
+
+  removeFromCart(game) {
+    const {KEY} = this.props
+    let _games = this.props.cart
+
+    _games = _games.filter(item => {
+      return item.id !== game.id
+    })
+
+    this.props.updateCartThunk(_games)
+    localStorage.setItem(KEY, JSON.stringify(_games))
+  }
+
   render() {
-    const {cart, games, orderStatus} = this.props
+    const {cart, games} = this.props
     const {step} = this.state
+    const displayGame = this.displayGame()
     switch (step) {
       case 1:
         return (
@@ -60,7 +91,13 @@ class Cart extends Component {
             <header>
               <h1>Cart</h1>
             </header>
-            {cart.map(game => <CartItem game={game} key={games.id} />)}
+            {displayGame.map(game => (
+              <CartItem
+                game={game}
+                key={games.id}
+                removeFromCart={this.removeFromCart}
+              />
+            ))}
             <Button
               onClick={() => {
                 this.validSubmit()
