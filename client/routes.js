@@ -14,21 +14,15 @@ class Routes extends Component {
   }
 
   render() {
-    const {isLoggedIn, games, gamesLS, addToLocalStorage} = this.props
-    console.log('TCL: Routes -> render -> this.props', this.props)
-    console.log(
-      'TCL: Routes -> render -> addToLocalStorage ',
-      addToLocalStorage
-    )
+    const {isLoggedIn, games, cart, addToCart, KEY} = this.props
+    console.log('TCL: Routes -> render -> isLoggedIn', isLoggedIn)
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route
-          exact
+          exacts
           path="/games"
-          render={() => (
-            <Games games={games} addToLocalStorage={addToLocalStorage} />
-          )}
+          render={() => <Games games={games} addToCart={addToCart} />}
         />
         <Route exact path="/games/:id" component={Game} />
         <Route exact path="/login" component={Login} />
@@ -36,7 +30,7 @@ class Routes extends Component {
         <Route
           exact
           path="/cart"
-          render={() => <Cart gamesLS={gamesLS} games={games} />}
+          render={() => <Cart cart={cart} games={games} KEY={KEY} />}
         />
         {isLoggedIn && (
           <Switch>
