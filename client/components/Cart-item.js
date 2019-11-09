@@ -1,8 +1,7 @@
 import React from 'react'
-import {Card, CardImg, CardBody, CardDeck, CardHeader} from 'reactstrap'
+import {Card, CardImg, CardBody, CardDeck, CardHeader, Button} from 'reactstrap'
 const CartItem = props => {
-  const {game} = props
-  console.log('GAME', game)
+  const {game, removeFromCart} = props
   return (
     <div className="container mx-auto">
       <CardDeck className="m-0 p-0 d-flex justify-content-center">
@@ -19,6 +18,15 @@ const CartItem = props => {
             <CardHeader>{game.name}</CardHeader>
             <CardBody>
               <CardImg width="100%" src={game.imageUrl} alt="Card image cap" />
+              <Button
+                className="m-1"
+                color="warning"
+                onClick={() => {
+                  removeFromCart(game)
+                }}
+              >
+                Remove item
+              </Button>
             </CardBody>
           </Card>
         </div>

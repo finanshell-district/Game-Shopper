@@ -1,56 +1,50 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getGamesThunk} from '../store/game'
+import {updateCartThunk} from '../store/cart'
 import {Routes, Navbar} from './index'
 
 class Container extends React.Component {
   constructor() {
     super()
     this.state = {
-      KEY: 'bkasjbdfkjasdkfjhaksdfjskd',
-      gamesLS: []
+      KEY: 'bkasjbdfkjasdkfjhaksdfjskd'
     }
-    this.addToLocalStorage = this.addToLocalStorage.bind(this)
+    this.addToCart = this.addToCart.bind(this)
   }
   componentDidMount() {
     this.props.getGamesThunk()
     let _games = localStorage.getItem(this.state.KEY)
     if (_games) {
       _games = JSON.parse(_games)
-      this.setState({
-        gamesLS: _games
-      })
+      this.props.updateCartThunk(_games)
     }
   }
 
-  addToLocalStorage(game) {
-    let _games = this.state.gamesLS
+  addToCart(game) {
+    let _games = this.props.cart
     // const found
     const order = {
       id: game.id,
       qty: 1
     }
     _games.push(order)
-    this.setState({
-      gamesLS: _games
-    })
+    this.props.updateCartThunk(_games)
     localStorage.setItem(this.state.KEY, JSON.stringify(_games))
   }
 
   render() {
-    const {games} = this.props
-    const {gamesLS} = this.state
-    console.log(
-      'TCL: Container -> render -> this.addToLocalStorage',
-      this.addToLocalStorage
-    )
+    const {games, cart} = this.props
+    const {KEY} = this.state
     return (
       <div>
         <Navbar />
         <Routes
-          gamesLS={gamesLS}
+          cart={cart}
           games={games}
-          addToLocalStorage={this.addToLocalStorage}
+          addToCart={this.addToCart}
+          KEY={KEY}
+          removefromCart={this.removeFromCart}
         />
       </div>
     )
@@ -63,13 +57,14 @@ class Container extends React.Component {
 const mapStateToProps = state => {
   return {
     games: state.game.games,
-    cart: state.game.cart
+    cart: state.cart.cart
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getGamesThunk: () => dispatch(getGamesThunk())
+    getGamesThunk: () => dispatch(getGamesThunk()),
+    updateCartThunk: cart => dispatch(updateCartThunk(cart))
   }
 }
 

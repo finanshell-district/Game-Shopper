@@ -11,7 +11,7 @@ import {
 import {Link} from 'react-router-dom'
 
 const Games = props => {
-  let {games, addToLocalStorage} = props
+  let {games, addToCart} = props
   console.log('TCL: props', props)
   games = games ? games : []
   return (
@@ -47,7 +47,7 @@ const Games = props => {
                   className="m-1"
                   color="warning"
                   onClick={() => {
-                    addToLocalStorage(game)
+                    addToCart(game)
                   }}
                 >
                   Add To Cart
