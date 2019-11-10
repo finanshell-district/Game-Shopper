@@ -46,4 +46,4 @@ git commit --allow-empty -m 'Deploying'
 # git push --force heroku deploy:master
 # pushing code to 'deploy' branch which has a web hook between github and heroku
 # anything pushed to 'deploy' branch will be deployed to heroku server
-git push --force deploy
+git push --force origin deploy
