@@ -19,7 +19,7 @@ class Routes extends Component {
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route
-          exacts
+          exact
           path="/games"
           render={() => <Games games={games} addToCart={addToCart} />}
         />
