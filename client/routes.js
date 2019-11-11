@@ -13,6 +13,7 @@ import {
   ThankYou
 } from './components'
 import {me} from './store'
+import MyOrders from './components/MyOrders'
 
 /**
  * COMPONENT
@@ -57,6 +58,7 @@ class Routes extends Component {
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route exact path="/home" component={UserHome} />
+            <Route exact path="/orders" component={MyOrders} />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
