@@ -161,14 +161,14 @@ const orders = [
 
 const orderitems = [
   {
-    OrderId: 1,
-    GameId: 1,
+    orderId: 1,
+    gameId: 1,
     quantity: 7
   },
   {
     // Captilized because these are columns that created from the model associations
-    OrderId: 1,
-    GameId: 2,
+    orderId: 1,
+    gameId: 2,
     quantity: 6
   }
 ]

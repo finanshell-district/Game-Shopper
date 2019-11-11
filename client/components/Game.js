@@ -18,9 +18,7 @@ class Game extends React.Component {
     }
     return (
       <div className="container">
-        <Link to={`/games/${game.id}`}>
-          <h3>{game.name}</h3>
-        </Link>
+        <h3>{game.name}</h3>
         <img src={game.imageUrl} />
         <p>{`Price:$${game.price / 100}`}</p>
         <p>Description: {game.description}</p>
