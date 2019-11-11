@@ -4,15 +4,14 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    console.log('REQ ', req.params.email)
-    const {email} = req.body
-    console.log('TCL:  email', email)
-    const user = await User.findOne({where: {email}})
-    const order = await Order.findAll({where: {UserId: user.id}})
-    const games = await OrderItem.findAll({
-      GameId: {where: {OrderId: order.id}}
-    })
-    res.send(games)
+    const userId = req.session.passport.user
+    console.log('TCL:  userId ', userId)
+    // const user = await User.findOne({where: {email}})
+    // const order = await Order.findAll({where: {UserId: user.id}})
+    // const games = await OrderItem.findAll({
+    //   GameId: {where: {OrderId: order.id}}
+    // })
+    // res.send(games)
   } catch (error) {
     next(error)
   }
