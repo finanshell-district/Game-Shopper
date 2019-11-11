@@ -152,12 +152,12 @@ const orders = [
   {
     status: 'INCOMPLETE',
     orderDate: null,
-    UserId: 1
+    userId: 1
   },
   {
     status: 'COMPLETE',
     orderDate: null,
-    UserId: 2
+    userId: 2
   }
 ]
 
