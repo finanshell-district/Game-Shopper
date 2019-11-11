@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getGamesThunk} from '../store/game'
-import {updateCartThunk} from '../store/cart'
+import {updateCartThunk, getUsersCartThunk} from '../store/cart'
 import {Routes, Navbar} from './index'
 
 class Container extends React.Component {
@@ -13,7 +13,8 @@ class Container extends React.Component {
     this.addToCart = this.addToCart.bind(this)
   }
   componentDidMount() {
-    this.props.getGamesThunk()
+    const {getGamesThunk} = this.props
+    getGamesThunk()
     let _games = localStorage.getItem(this.state.KEY)
     if (_games) {
       _games = JSON.parse(_games)
@@ -35,7 +36,8 @@ class Container extends React.Component {
   }
 
   render() {
-    const {games, cart} = this.props
+    const {games, cart, email} = this.props
+    console.log('TCL: Container -> render -> email', email)
     const {KEY} = this.state
     return (
       <div>
@@ -58,14 +60,16 @@ class Container extends React.Component {
 const mapStateToProps = state => {
   return {
     games: state.game.games,
-    cart: state.cart.cart
+    cart: state.cart.cart,
+    email: state.user.email
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     getGamesThunk: () => dispatch(getGamesThunk()),
-    updateCartThunk: cart => dispatch(updateCartThunk(cart))
+    updateCartThunk: cart => dispatch(updateCartThunk(cart)),
+    getUsersCartThunk: email => dispatch(getUsersCartThunk(email))
   }
 }
 

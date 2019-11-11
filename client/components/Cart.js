@@ -4,7 +4,6 @@ import {CartItem, ThankYou} from './index'
 import {submitOrderThunk, updateCartThunk} from '../store/cart'
 import {Button} from 'reactstrap'
 import {Signup, Login} from './auth-form'
-
 // import { state } from 'fs';
 
 class Cart extends Component {

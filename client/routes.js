@@ -9,7 +9,8 @@ import {
   Games,
   Game,
   Cart,
-  SearchResults
+  SearchResults,
+  ThankYou
 } from './components'
 import {me} from './store'
 import MyOrders from './components/MyOrders'
@@ -46,6 +47,7 @@ class Routes extends Component {
           )}
         />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/thankYou" component={ThankYou} />
         <Route exact path="/signup" component={Signup} />
         <Route
           exact
