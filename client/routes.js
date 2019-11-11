@@ -2,7 +2,15 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, Games, Game, Cart} from './components'
+import {
+  Login,
+  Signup,
+  UserHome,
+  Games,
+  Game,
+  Cart,
+  SearchResults
+} from './components'
 import {me} from './store'
 
 /**
@@ -24,6 +32,18 @@ class Routes extends Component {
           render={() => <Games games={games} addToCart={addToCart} />}
         />
         <Route exact path="/games/:id" component={Game} />
+        <Route
+          exact
+          path="/search/:searchBy"
+          render={props => (
+            <SearchResults
+              {...props}
+              key={props.match.params.searchBy}
+              games={games}
+              addToCart={addToCart}
+            />
+          )}
+        />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route
