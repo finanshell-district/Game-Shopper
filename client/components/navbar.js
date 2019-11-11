@@ -96,7 +96,7 @@ const NavbarComponent = props => {
                 history.push(
                   `${
                     searchValue
-                      ? `/search:${searchValue}`
+                      ? `/search/${searchValue}`
                       : props.location.pathname
                   }`
                 )
@@ -110,7 +110,6 @@ const NavbarComponent = props => {
             onChange={e => {
               e.preventDefault()
               setSearchValue(e.target.value)
-              console.log('searchValue', searchValue)
             }}
           />
         </InputGroup>

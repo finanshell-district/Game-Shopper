@@ -26,7 +26,7 @@ const users = [
 
 const games = [
   {
-    name: 'X Wing',
+    name: 'Star Wars: X-Wing Miniatures Game',
     quantity: 1,
     price: 1299,
     description:
@@ -42,21 +42,111 @@ const games = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
       'https://cf.geekdo-images.com/itemrep/img/RhxrVlZj3mmqA1NgLv5ApD3uNAc=/fit-in/246x300/pic4893652.jpg'
+  },
+  {
+    name: 'Star Wars: Imperial Assault',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/nEOFuVi_AQWvpoXc_-lnp0F1vNM=/fit-in/246x300/pic2247647.jpg'
+  },
+  {
+    name: 'Star Wars: Rebellion',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/JuNSftznTMMebnS3IOqM-B_reDA=/fit-in/246x300/pic4325841.jpg'
+  },
+  {
+    name: 'Star Realms',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/OvrUBlZ7dKZSPy5vYTJKgSmhGMU=/fit-in/246x300/pic1903816.jpg'
+  },
+  {
+    name: 'Star Trek: Attack Wing',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/14IgoACMyi5k55RUqyhuu2l0jEQ=/fit-in/246x300/pic1731799.jpg'
+  },
+  {
+    name: 'Star Wars: Armada',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/C_72qE74Qqc8tkTUZyTGrnQ_Two=/fit-in/246x300/pic2355171.jpg'
+  },
+  {
+    name: 'Cthulhu Wars',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/Q5jn_9sxJzHb9KTKKGq44t_k-3U=/fit-in/246x300/pic3527761.jpg'
+  },
+  {
+    name: 'Mage Wars Arena',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/O2TJ--piIBCyeBW5bwBsku2gAdU=/fit-in/246x300/pic2386027.jpg'
+  },
+  {
+    name: 'Summoner Wars',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/RsvZqD5PyUOBs7xgNYtUxtOv9Is=/fit-in/246x300/pic923048.jpg'
+  },
+  {
+    name: 'Black Rose Wars',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/OJTuPhPLkVxEZGBMh89hP49mnK4=/fit-in/246x300/pic3973771.jpg'
+  },
+  {
+    name: 'Titan',
+    quantity: 6,
+    price: 1279,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    imageUrl:
+      'https://cf.geekdo-images.com/itemrep/img/Hqn7db5Z7v3ZE7ZO1jI2gGoF6oI=/fit-in/246x300/pic4854191.png'
   }
 ]
 
 // This is a quick way to add a lot of games at once.
-for (let i = 0; i < 10; i++) {
-  games.push({
-    name: 'Memoir 44',
-    quantity: 1,
-    price: 4999,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    imageUrl:
-      'https://cf.geekdo-images.com/itemrep/img/oU2Qqb-aX3qCzQWz0RDIwPUea5A=/fit-in/246x300/pic43663.jpg'
-  })
-}
+// for (let i = 0; i < 10; i++) {
+//   games.push({
+//     name: 'Memoir 44',
+//     quantity: 1,
+//     price: 4999,
+//     description:
+//       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+//     imageUrl:
+//       'https://cf.geekdo-images.com/itemrep/img/oU2Qqb-aX3qCzQWz0RDIwPUea5A=/fit-in/246x300/pic43663.jpg'
+//   })
+// }
 
 const orders = [
   {

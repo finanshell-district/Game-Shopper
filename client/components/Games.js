@@ -12,7 +12,6 @@ import {Link} from 'react-router-dom'
 
 const Games = props => {
   let {games, addToCart} = props
-  console.log('TCL: props', props)
   games = games ? games : []
   return (
     <div className="container mx-auto">
