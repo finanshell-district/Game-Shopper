@@ -2,6 +2,22 @@ const router = require('express').Router()
 const {Game, User, Order, OrderItem} = require('../db/models')
 module.exports = router
 
+router.get('/', async (req, res, next) => {
+  try {
+    console.log('REQ ', req.body)
+    const {email} = req.body
+    console.log('TCL:  email', email)
+    const user = await User.findOne({where: {email}})
+    const order = await Order.findAll({where: {UserId: user.id}})
+    const games = await OrderItem.findAll({
+      GameId: {where: {OrderId: order.id}}
+    })
+    res.send(games)
+  } catch (error) {
+    next(error)
+  }
+})
+
 router.post('/', async (req, res, next) => {
   try {
     const {email, items} = req.body

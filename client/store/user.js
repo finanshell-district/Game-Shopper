@@ -1,5 +1,6 @@
 import axios from 'axios'
 import history from '../history'
+import {getUsersCartThunk} from './cart'
 
 /**
  * ACTION TYPES
@@ -25,6 +26,10 @@ export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
+    if (res.data.email) {
+      console.log('TCL: res.data.email', res.data.email)
+      dispatch(getUsersCartThunk(res.data.email))
+    }
   } catch (err) {
     console.error(err)
   }

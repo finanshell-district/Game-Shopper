@@ -6,7 +6,7 @@ export default class ThankYou extends React.Component {
       <div className="container">
         <h1>Thank you for your oder!</h1>
         <div>Your order number is ###</div>
-        <img src="/tableGames.jpg" />
+        <img src="public/assets/tableGames.jpg" />
       </div>
     )
   }

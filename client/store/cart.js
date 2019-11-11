@@ -26,6 +26,7 @@ const updateCart = cart => ({
   type: UPDATE_CART,
   cart
 })
+
 /**
  * THUNK CREATORS
  */
@@ -40,6 +41,16 @@ export const submitOrderThunk = order => async dispatch => {
 export const updateCartThunk = cart => dispatch => {
   try {
     dispatch(updateCart(cart))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const getUsersCartThunk = email => async dispatch => {
+  try {
+    console.log('TCL: email', email)
+    const {data} = await axios.get('api/orders', email)
+    dispatch(updateCart(data))
   } catch (err) {
     console.error(err)
   }
