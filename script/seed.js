@@ -151,11 +151,13 @@ const games = [
 const orders = [
   {
     status: 'INCOMPLETE',
-    orderDate: null
+    orderDate: null,
+    userId: 1
   },
   {
     status: 'COMPLETE',
-    orderDate: null
+    orderDate: null,
+    userId: 2
   }
 ]
 

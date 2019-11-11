@@ -48,7 +48,7 @@ const NavbarComponent = props => {
                 history.push('/cart')
               }}
             >
-              Cart
+              Cart ({props.cart.length})
             </NavLink>
           </NavItem>
           {isLoggedIn ? (

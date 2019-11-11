@@ -18,3 +18,13 @@ router.post('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.get('/', async (req, res, next) => {
+  try {
+    const UserId = req.session.passport.user
+    const orders = await Order.findAll({where: {UserId}})
+    res.json(orders)
+  } catch (error) {
+    next(error)
+  }
+})

@@ -31,6 +31,7 @@ class Container extends React.Component {
     _games.push(order)
     this.props.updateCartThunk(_games)
     localStorage.setItem(this.state.KEY, JSON.stringify(_games))
+    this.setState(this.state)
   }
 
   render() {
@@ -38,7 +39,7 @@ class Container extends React.Component {
     const {KEY} = this.state
     return (
       <div>
-        <Navbar />
+        <Navbar key={cart.length} cart={cart} />
         <Routes
           cart={cart}
           games={games}
