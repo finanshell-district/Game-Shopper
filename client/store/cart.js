@@ -49,7 +49,11 @@ export const updateCartThunk = cart => dispatch => {
 export const getUsersCartThunk = email => async dispatch => {
   try {
     console.log('TCL: email', email)
-    const {data} = await axios.get('api/orders', email)
+    const {data} = await axios.get('api/orders', {
+      params: {
+        email
+      }
+    })
     dispatch(updateCart(data))
   } catch (err) {
     console.error(err)

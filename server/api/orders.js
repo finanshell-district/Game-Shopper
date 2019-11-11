@@ -4,7 +4,7 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
-    console.log('REQ ', req.body)
+    console.log('REQ ', req.params.email)
     const {email} = req.body
     console.log('TCL:  email', email)
     const user = await User.findOne({where: {email}})
