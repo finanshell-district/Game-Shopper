@@ -111,6 +111,17 @@ const NavbarComponent = props => {
               e.preventDefault()
               setSearchValue(e.target.value)
             }}
+            onKeyDown={e => {
+              if (e.keyCode === 13) {
+                history.push(
+                  `${
+                    searchValue
+                      ? `/search/${searchValue}`
+                      : props.location.pathname
+                  }`
+                )
+              }
+            }}
           />
         </InputGroup>
       </Navbar>
