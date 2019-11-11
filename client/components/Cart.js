@@ -81,6 +81,9 @@ class Cart extends Component {
           <div>
             <h4>Sign Up to complete order</h4>
             <Signup />
+            <br />
+            <h4>Log in to complete order</h4>
+            <Login />
           </div>
         )
       case 2:
