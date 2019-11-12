@@ -8,12 +8,7 @@ import {Welcome} from './index'
 export const UserHome = props => {
   const {email} = props
   const welcome = email ? <Welcome email={email} /> : null
-  return (
-    <div>
-      <h3> GENERAL HOME </h3>
-      {welcome}
-    </div>
-  )
+  return <div style={{textAlign: 'center'}}>{welcome}</div>
 }
 
 /**
