@@ -16,7 +16,7 @@ class Game extends React.Component {
         <div>
           <h1>Order # {this.props.match.params.orderId}</h1>
           {order.games.map(game => (
-            <div>
+            <div key={game.id}>
               {game.name + ' '}
               ${game.price / 100} {'Qty: ' + game.orderItem.quantity}
             </div>

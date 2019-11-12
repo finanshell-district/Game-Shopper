@@ -32,7 +32,7 @@ class Container extends React.Component {
     _games.push(order)
     this.props.updateCartThunk(_games)
     localStorage.setItem(this.state.KEY, JSON.stringify(_games))
-    this.setState(this.state)
+    // this.setState(this.state)
   }
 
   render() {
