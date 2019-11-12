@@ -6,6 +6,7 @@ import {getUsersCartThunk} from './cart'
  * ACTION TYPES
  */
 const GET_USER = 'GET_USER'
+const UPDATE_USER = 'UPDATE_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
 /**
@@ -17,6 +18,7 @@ const defaultUser = {}
  * ACTION CREATORS
  */
 const getUser = user => ({type: GET_USER, user})
+const updateUser = user => ({type: UPDATE_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
 
 /**
@@ -30,6 +32,27 @@ export const me = () => async dispatch => {
       console.log('TCL: res.data.email', res.data.email)
       dispatch(getUsersCartThunk(res.data.email))
     }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const getUserThunk = () => async dispatch => {
+  try {
+    // pass the cookies to the api
+    const res = await axios.get('/api/users/profile', {withCredentials: true})
+    dispatch(getUser(res.data))
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export const updateUserThunk = data => async dispatch => {
+  try {
+    const res = await axios.put('/api/users/profile', data, {
+      withCredentials: true
+    })
+    dispatch(updateUser(res.data))
   } catch (err) {
     console.error(err)
   }
@@ -67,6 +90,8 @@ export const logout = () => async dispatch => {
 export default function(state = defaultUser, action) {
   switch (action.type) {
     case GET_USER:
+      return action.user
+    case UPDATE_USER:
       return action.user
     case REMOVE_USER:
       return defaultUser
