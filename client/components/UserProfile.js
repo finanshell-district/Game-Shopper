@@ -36,6 +36,7 @@ class UserProfile extends React.Component {
     return (
       <div className="container">
         <h1>Hi {user.firstName}!</h1>
+        <img src={user.imageUrl} />
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="firstName">First Name: </label>

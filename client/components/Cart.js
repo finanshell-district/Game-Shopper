@@ -90,7 +90,7 @@ class Cart extends Component {
         return <ThankYou />
       default:
         return (
-          <div>
+          <div className="container" style={{textAlign: 'center'}}>
             <header>
               <h1>Cart</h1>
             </header>
@@ -101,6 +101,7 @@ class Cart extends Component {
                 removeFromCart={this.removeFromCart}
               />
             ))}
+            <br />
             <Button
               onClick={() => {
                 this.validSubmit()

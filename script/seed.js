@@ -5,22 +5,20 @@ const {User, Game, Order, OrderItem} = require('../server/db/models')
 
 const users = [
   {
-    firstName: 'TestFirstName1',
-    lastName: 'TestLastName1',
-    email: 'test1@test.com',
+    firstName: 'Jessica',
+    lastName: 'Bracht',
+    email: 'jess@fullstack.com',
     password: 'test1',
-    shippingAddress: '1 Test street, Test City, Test State, TEST',
-    imageUrl:
-      'https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/'
+    shippingAddress: '5 Hanover Square New York NY 10004 ',
+    imageUrl: 'https://ca.slack-edge.com/T024FPYBQ-UB2BFQPK9-f5f4f74880b1-48'
   },
   {
-    firstName: 'TestFirstName2',
-    lastName: 'TestLastName2',
-    email: 'test2@test.com',
+    firstName: 'Orlando',
+    lastName: 'Caraballo',
+    email: 'orlando@fullstack.com',
     password: 'test2',
-    shippingAddress: '2 Test street, Test City, Test State, TEST',
-    imageUrl:
-      'https://via.placeholder.com/300.png/09f/fff%20C/O%20https://placeholder.com/'
+    shippingAddress: '90 Broad Street New York NY 10004',
+    imageUrl: 'https://ca.slack-edge.com/T024FPYBQ-UJFJTU70D-e57338b1f90e-48'
   }
 ]
 
@@ -28,7 +26,7 @@ const games = [
   {
     name: 'Star Wars: X-Wing Miniatures Game',
     quantity: 1,
-    price: 1299,
+    price: 2499,
     description:
       'quip ex ea commodo eu fugiat nulla pariatur. Excepteur sint a qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -37,7 +35,7 @@ const games = [
   {
     name: 'Alhambra',
     quantity: 6,
-    price: 1279,
+    price: 3999,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -46,7 +44,7 @@ const games = [
   {
     name: 'Star Wars: Imperial Assault',
     quantity: 6,
-    price: 1279,
+    price: 6499,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -55,7 +53,7 @@ const games = [
   {
     name: 'Star Wars: Rebellion',
     quantity: 6,
-    price: 1279,
+    price: 7949,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -63,8 +61,8 @@ const games = [
   },
   {
     name: 'Star Realms',
-    quantity: 6,
-    price: 1279,
+    quantity: 1,
+    price: 1295,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -73,7 +71,7 @@ const games = [
   {
     name: 'Star Trek: Attack Wing',
     quantity: 6,
-    price: 1279,
+    price: 2789,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -82,7 +80,7 @@ const games = [
   {
     name: 'Star Wars: Armada',
     quantity: 6,
-    price: 1279,
+    price: 7995,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -90,8 +88,8 @@ const games = [
   },
   {
     name: 'Cthulhu Wars',
-    quantity: 6,
-    price: 1279,
+    quantity: 1,
+    price: 3999,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -99,8 +97,8 @@ const games = [
   },
   {
     name: 'Mage Wars Arena',
-    quantity: 6,
-    price: 1279,
+    quantity: 1,
+    price: 4599,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -108,7 +106,7 @@ const games = [
   },
   {
     name: 'Summoner Wars',
-    quantity: 6,
+    quantity: 1,
     price: 1279,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -118,7 +116,7 @@ const games = [
   {
     name: 'Black Rose Wars',
     quantity: 6,
-    price: 1279,
+    price: 6095,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
@@ -127,7 +125,7 @@ const games = [
   {
     name: 'Titan',
     quantity: 6,
-    price: 1279,
+    price: 8585,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imageUrl:
