@@ -6,8 +6,9 @@ import user from './user'
 import game from './game'
 import cart from './cart'
 import order from './order'
+import orderItem from './orderItem'
 
-const reducer = combineReducers({user, game, cart, order})
+const reducer = combineReducers({user, game, cart, order, orderItem})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

@@ -48,7 +48,7 @@ const NavbarComponent = props => {
                 history.push('/cart')
               }}
             >
-              Cart ({props.cart.length})
+              Cart {/* Cart ({props.cart.length}) */}
             </NavLink>
           </NavItem>
           {isLoggedIn ? (
@@ -60,6 +60,15 @@ const NavbarComponent = props => {
                   }}
                 >
                   My Profile
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  onClick={() => {
+                    history.push('/orders')
+                  }}
+                >
+                  Order History
                 </NavLink>
               </NavItem>
               <NavItem>
