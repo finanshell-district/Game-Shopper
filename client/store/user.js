@@ -27,7 +27,6 @@ export const me = () => async dispatch => {
     const res = await axios.get('/auth/me')
     dispatch(getUser(res.data || defaultUser))
     if (res.data.email) {
-      console.log('TCL: res.data.email', res.data.email)
       dispatch(getUsersCartThunk(res.data.email))
     }
   } catch (err) {

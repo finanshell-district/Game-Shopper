@@ -63,6 +63,15 @@ const NavbarComponent = props => {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink
+                  onClick={() => {
+                    history.push('/orders')
+                  }}
+                >
+                  Order History
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink onClick={props.handleClick}>Log Out</NavLink>
               </NavItem>
             </>

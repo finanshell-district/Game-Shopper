@@ -15,11 +15,15 @@ class MyOrders extends React.Component {
   render() {
     let {orders} = this.props
     orders = orders ? orders : []
-    console.log(orders)
     return (
       <div className="container">
+        <h1>Order History</h1>
         {orders.map(order => {
-          return <div key={order.id}>{order.id}</div>
+          return (
+            <div key={order.id}>
+              <Link to={`orders/${order.id}`}>Order Number # {order.id}</Link>
+            </div>
+          )
         })}
       </div>
     )
@@ -27,8 +31,8 @@ class MyOrders extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-    email: state.user.email
-    // orders: state.order.orders
+    email: state.user.email,
+    orders: state.order.orders
   }
 }
 const mapDispatchToProps = dispatch => {

@@ -37,7 +37,6 @@ class Container extends React.Component {
 
   render() {
     const {games, cart, email} = this.props
-    console.log('TCL: Container -> render -> email', email)
     const {KEY} = this.state
     return (
       <div>

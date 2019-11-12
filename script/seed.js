@@ -202,11 +202,11 @@ async function seed() {
     })
   )
 
-  // await Promise.all(
-  //   orderitems.map(orderitem => {
-  //     return OrderItem.create(orderitem)
-  //   })
-  // )
+  await Promise.all(
+    orderitems.map(orderitem => {
+      return OrderItem.create(orderitem)
+    })
+  )
 
   // console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)
