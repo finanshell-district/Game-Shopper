@@ -15,3 +15,37 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.get('/profile', async (req, res, next) => {
+  try {
+    if (!req.session.passport) {
+      res.status(401).send('Unauthorized')
+    } else {
+      const userId = req.session.passport.user
+      const userData = await User.findByPk(userId)
+      res.json(userData)
+    }
+  } catch (error) {
+    next(error)
+  }
+})
+
+router.put('/profile', async (req, res, next) => {
+  try {
+    if (!req.session.passport) {
+      res.status(401).send('Unauthorized')
+    } else {
+      const userId = req.session.passport.user
+      const updateProfileData = req.body
+      await User.update(updateProfileData, {
+        where: {
+          id: userId
+        }
+      })
+      const userData = await User.findByPk(userId)
+      res.json(userData)
+    }
+  } catch (error) {
+    next(error)
+  }
+})
