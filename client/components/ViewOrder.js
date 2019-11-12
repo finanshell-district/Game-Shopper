@@ -18,7 +18,7 @@ class Game extends React.Component {
           {order.games.map(game => (
             <div>
               {game.name + ' '}
-              ${game.price / 100}
+              ${game.price / 100} {'Qty: ' + game.orderItem.quantity}
             </div>
           ))}
           Total: ${' '}
